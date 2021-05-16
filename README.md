@@ -1,6 +1,6 @@
 # Simple Node site
 
-See it running on replit.com: (site)[https://replit.com/@isaiahaiasi/first-node-site#index.js]
+## [See it running on replit](https://replit.com/@isaiahaiasi/first-node-site#index.js)
 
 ## Build and run locally
 You will need to have git and node installed in oder to run a local build of the site.
