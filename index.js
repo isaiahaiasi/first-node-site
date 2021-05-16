@@ -1,36 +1,37 @@
 const http = require('http');
 const fs = require('fs');
-const url = require('url');
 
-const loadHome = (req, res) => {
+const loadFile = (res, filename) => {
+  fs.readFile(filename, (err, data) => {
+    if (err) throw err;
 
+    res.writeHead(200, {'Content-Type': 'text/html'})
+    res.write(data);
+    res.end();
+  })
 }
 
-const loadAbout = (req, res) => {
-  
-}
+const loadHome = (res) => loadFile(res, './index.html');
 
-const loadContactMe = (req, res) => {
-  
-}
+const loadAbout = (res) => loadFile(res, './about.html');
 
-const load404 = (req, res) => {
+const loadContactMe = (res) => loadFile(res, './contact-me.html');
 
-}
+const load404 = (res) => loadFile(res, './404.html');
 
 http.createServer((req, res) => {
   switch(req.url) {
     case '/':
-      loadHome(req, res);
+      loadHome(res);
       break;
     case '/about':
-      loadAbout(req, res);
+      loadAbout(res);
       break;
-    case 'contact-me':
-      loadContactMe(req, res);
+    case '/contact-me':
+      loadContactMe(res);
       break;
     default:
-      load404(req, res);
+      load404(res);
       break;
   }
 }).listen(8080);
