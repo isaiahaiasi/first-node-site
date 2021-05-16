@@ -18,5 +18,4 @@ const navTemplateString = `
 
 const navTemplate = document.createElement('div');
 navTemplate.innerHTML = navTemplateString;
-console.log(navTemplate);
 document.body.prepend(navTemplate);
