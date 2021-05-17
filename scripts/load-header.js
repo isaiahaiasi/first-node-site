@@ -1,4 +1,4 @@
-const parser = new DOMParser();
+/* eslint-disable no-undef */
 
 const navTemplateString = `
   <nav>
@@ -16,6 +16,6 @@ const navTemplateString = `
   </nav>
 `;
 
-const navTemplate = document.createElement('div');
+const navTemplate = document.createElement("div");
 navTemplate.innerHTML = navTemplateString;
 document.body.prepend(navTemplate);
